@@ -3,10 +3,10 @@
   <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Minal Kharat | Professional Portfolio</title>
+        <title>Dr. Minal Kharat | Neurologist</title>
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
       <style>
                 * {
                               margin: 0;
@@ -15,8 +15,9 @@
                 }
 
                 :root {
-                              --primary: #2563eb;
-                              --primary-dark: #1d4ed8;
+                              --primary: #1a5f7a;
+                              --primary-dark: #134b5f;
+                              --accent: #57c5b6;
                               --dark: #1e293b;
                               --gray: #64748b;
                               --light: #f8fafc;
@@ -25,9 +26,13 @@
 
                 body {
                               font-family: 'Inter', sans-serif;
-                              line-height: 1.6;
+                              line-height: 1.7;
                               color: var(--dark);
-                              background: var(--light);
+                              background: var(--white);
+                }
+
+                h1, h2, h3 {
+                              font-family: 'Playfair Display', serif;
                 }
 
                 /* Navigation */
@@ -35,11 +40,11 @@
                               position: fixed;
                               top: 0;
                               width: 100%;
-                              background: rgba(255, 255, 255, 0.95);
+                              background: rgba(255, 255, 255, 0.98);
                               backdrop-filter: blur(10px);
                               padding: 1rem 0;
                               z-index: 1000;
-                              box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+                              box-shadow: 0 1px 3px rgba(0,0,0,0.08);
                 }
 
                 .nav-container {
@@ -52,15 +57,20 @@
                 }
 
                 .logo {
-                              font-weight: 700;
+                              font-family: 'Playfair Display', serif;
+                              font-weight: 600;
                               font-size: 1.5rem;
                               color: var(--primary);
                               text-decoration: none;
                 }
 
+                .logo span {
+                              color: var(--accent);
+                }
+
                 .nav-links {
                               display: flex;
-                              gap: 2rem;
+                              gap: 2.5rem;
                               list-style: none;
                 }
 
@@ -68,6 +78,7 @@
                               text-decoration: none;
                               color: var(--dark);
                               font-weight: 500;
+                              font-size: 0.95rem;
                               transition: color 0.3s;
                 }
 
@@ -75,13 +86,25 @@
                               color: var(--primary);
                 }
 
+                .nav-cta {
+                              background: var(--primary);
+                              color: var(--white) !important;
+                              padding: 0.75rem 1.5rem;
+                              border-radius: 6px;
+                              transition: background 0.3s !important;
+                }
+
+                .nav-cta:hover {
+                              background: var(--primary-dark) !important;
+                }
+
                 /* Hero Section */
                 .hero {
                               min-height: 100vh;
                               display: flex;
                               align-items: center;
-                              padding: 0 2rem;
-                              background: linear-gradient(135deg, var(--white) 0%, var(--light) 100%);
+                              padding: 6rem 2rem 4rem;
+                              background: linear-gradient(135deg, var(--light) 0%, var(--white) 50%, #e8f4f8 100%);
                 }
 
                 .hero-container {
@@ -94,20 +117,48 @@
                 }
 
                 .hero-content h1 {
-                              font-size: 3.5rem;
-                              font-weight: 700;
+                              font-size: 3.2rem;
+                              font-weight: 600;
                               line-height: 1.2;
+                              margin-bottom: 0.5rem;
+                              color: var(--dark);
+                }
+
+                .hero-content .subtitle {
+                              font-size: 1.25rem;
+                              color: var(--primary);
+                              font-weight: 500;
                               margin-bottom: 1.5rem;
                 }
 
-                .hero-content h1 span {
-                              color: var(--primary);
-                }
-
                 .hero-content p {
-                              font-size: 1.25rem;
+                              font-size: 1.1rem;
                               color: var(--gray);
                               margin-bottom: 2rem;
+                              max-width: 500px;
+                }
+
+                .hero-badges {
+                              display: flex;
+                              gap: 1rem;
+                              margin-bottom: 2rem;
+                              flex-wrap: wrap;
+                }
+
+                .badge {
+                              background: var(--white);
+                              border: 1px solid #e2e8f0;
+                              padding: 0.5rem 1rem;
+                              border-radius: 50px;
+                              font-size: 0.85rem;
+                              color: var(--gray);
+                              display: flex;
+                              align-items: center;
+                              gap: 0.5rem;
+                }
+
+                .badge-icon {
+                              color: var(--accent);
                 }
 
                 .btn {
@@ -119,6 +170,8 @@
                               border-radius: 8px;
                               font-weight: 600;
                               transition: all 0.3s;
+                              border: none;
+                              cursor: pointer;
                 }
 
                 .btn:hover {
@@ -141,19 +194,44 @@
                 .hero-image {
                               display: flex;
                               justify-content: center;
+                              position: relative;
                 }
 
-                .profile-placeholder {
-                              width: 350px;
-                              height: 350px;
-                              border-radius: 50%;
+                .doctor-image {
+                              width: 400px;
+                              height: 480px;
+                              border-radius: 20px;
                               background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
                               display: flex;
                               align-items: center;
                               justify-content: center;
-                              font-size: 8rem;
+                              font-size: 6rem;
                               color: var(--white);
-                              box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.25);
+                              position: relative;
+                              box-shadow: 0 25px 50px -12px rgba(26, 95, 122, 0.25);
+                }
+
+                .experience-badge {
+                              position: absolute;
+                              bottom: -20px;
+                              left: -20px;
+                              background: var(--white);
+                              padding: 1.25rem;
+                              border-radius: 12px;
+                              box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+                              text-align: center;
+                }
+
+                .experience-badge .number {
+                              font-size: 2rem;
+                              font-weight: 700;
+                              color: var(--primary);
+                              font-family: 'Playfair Display', serif;
+                }
+
+                .experience-badge .text {
+                              font-size: 0.85rem;
+                              color: var(--gray);
                 }
 
                 /* Sections */
@@ -166,17 +244,79 @@
                               margin: 0 auto;
                 }
 
+                .section-header {
+                              text-align: center;
+                              margin-bottom: 4rem;
+                }
+
+                .section-label {
+                              color: var(--accent);
+                              font-weight: 600;
+                              text-transform: uppercase;
+                              letter-spacing: 2px;
+                              font-size: 0.85rem;
+                              margin-bottom: 0.75rem;
+                }
+
                 .section-title {
                               font-size: 2.5rem;
-                              font-weight: 700;
-                              text-align: center;
+                              font-weight: 600;
+                              color: var(--dark);
                               margin-bottom: 1rem;
                 }
 
                 .section-subtitle {
-                              text-align: center;
                               color: var(--gray);
-                              margin-bottom: 4rem;
+                              max-width: 600px;
+                              margin: 0 auto;
+                }
+
+                /* Services */
+                #services {
+                              background: var(--light);
+                }
+
+                .services-grid {
+                              display: grid;
+                              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                              gap: 2rem;
+                }
+
+                .service-card {
+                              background: var(--white);
+                              padding: 2rem;
+                              border-radius: 16px;
+                              box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+                              transition: transform 0.3s, box-shadow 0.3s;
+                              border: 1px solid #f1f5f9;
+                }
+
+                .service-card:hover {
+                              transform: translateY(-5px);
+                              box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+                }
+
+                .service-icon {
+                              width: 60px;
+                              height: 60px;
+                              background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+                              border-radius: 12px;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              font-size: 1.75rem;
+                              margin-bottom: 1.5rem;
+                }
+
+                .service-card h3 {
+                              font-size: 1.25rem;
+                              margin-bottom: 0.75rem;
+                              color: var(--dark);
+                }
+
+                .service-card p {
+                              color: var(--gray);
+                              font-size: 0.95rem;
                 }
 
                 /* About */
@@ -191,88 +331,106 @@
                               align-items: center;
                 }
 
+                .about-image {
+                              position: relative;
+                }
+
+                .about-img-placeholder {
+                              width: 100%;
+                              height: 500px;
+                              background: linear-gradient(135deg, #e8f4f8 0%, var(--light) 100%);
+                              border-radius: 20px;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              font-size: 4rem;
+                }
+
+                .about-text h2 {
+                              font-size: 2.25rem;
+                              margin-bottom: 1.5rem;
+                              color: var(--dark);
+                }
+
                 .about-text p {
                               color: var(--gray);
                               margin-bottom: 1.5rem;
                 }
 
-                .skills {
-                              display: flex;
-                              flex-wrap: wrap;
-                              gap: 0.75rem;
+                .credentials {
+                              display: grid;
+                              grid-template-columns: 1fr 1fr;
+                              gap: 1rem;
                               margin-top: 2rem;
                 }
 
-                .skill-tag {
+                .credential {
+                              display: flex;
+                              align-items: center;
+                              gap: 0.75rem;
+                }
+
+                .credential-icon {
+                              width: 40px;
+                              height: 40px;
                               background: var(--light);
-                              padding: 0.5rem 1rem;
-                              border-radius: 20px;
-                              font-size: 0.875rem;
-                              font-weight: 500;
-                              color: var(--primary);
-                }
-
-                /* Projects */
-                #projects {
-                              background: var(--light);
-                }
-
-                .projects-grid {
-                              display: grid;
-                              grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-                              gap: 2rem;
-                }
-
-                .project-card {
-                              background: var(--white);
-                              border-radius: 12px;
-                              overflow: hidden;
-                              box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-                              transition: transform 0.3s, box-shadow 0.3s;
-                }
-
-                .project-card:hover {
-                              transform: translateY(-5px);
-                              box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
-                }
-
-                .project-image {
-                              height: 200px;
-                              background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+                              border-radius: 8px;
                               display: flex;
                               align-items: center;
                               justify-content: center;
-                              color: var(--white);
-                              font-size: 3rem;
+                              color: var(--primary);
                 }
 
-                .project-content {
+                .credential-text {
+                              font-size: 0.9rem;
+                }
+
+                .credential-text strong {
+                              display: block;
+                              color: var(--dark);
+                }
+
+                .credential-text span {
+                              color: var(--gray);
+                              font-size: 0.85rem;
+                }
+
+                /* Conditions */
+                #conditions {
+                              background: var(--light);
+                }
+
+                .conditions-grid {
+                              display: grid;
+                              grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                              gap: 1.5rem;
+                }
+
+                .condition-item {
+                              background: var(--white);
                               padding: 1.5rem;
+                              border-radius: 12px;
+                              text-align: center;
+                              border: 1px solid #f1f5f9;
+                              transition: all 0.3s;
                 }
 
-                .project-content h3 {
-                              font-size: 1.25rem;
+                .condition-item:hover {
+                              border-color: var(--primary);
+                              box-shadow: 0 4px 12px rgba(26, 95, 122, 0.1);
+                }
+
+                .condition-item span {
+                              font-size: 2rem;
+                              display: block;
                               margin-bottom: 0.75rem;
                 }
 
-                .project-content p {
-                              color: var(--gray);
+                .condition-item h4 {
+                              font-family: 'Inter', sans-serif;
+                              font-weight: 600;
+                              color: var(--dark);
                               font-size: 0.95rem;
-                              margin-bottom: 1rem;
-                }
-
-                .project-tags {
-                              display: flex;
-                              gap: 0.5rem;
-                              flex-wrap: wrap;
-                }
-
-                .project-tag {
-                              background: var(--light);
-                              padding: 0.25rem 0.75rem;
-                              border-radius: 15px;
-                              font-size: 0.75rem;
-                              color: var(--gray);
                 }
 
                 /* Contact */
@@ -280,59 +438,219 @@
                               background: var(--white);
                 }
 
-                .contact-content {
-                              text-align: center;
-                              max-width: 600px;
-                              margin: 0 auto;
+                .contact-grid {
+                              display: grid;
+                              grid-template-columns: 1fr 1fr;
+                              gap: 4rem;
                 }
 
-                .contact-content p {
+                .contact-info h2 {
+                              font-size: 2.25rem;
+                              margin-bottom: 1.5rem;
+                              color: var(--dark);
+                }
+
+                .contact-info > p {
                               color: var(--gray);
                               margin-bottom: 2rem;
                 }
 
-                .social-links {
+                .contact-details {
                               display: flex;
-                              justify-content: center;
+                              flex-direction: column;
                               gap: 1.5rem;
-                              margin-top: 2rem;
                 }
 
-                .social-link {
+                .contact-item {
+                              display: flex;
+                              align-items: flex-start;
+                              gap: 1rem;
+                }
+
+                .contact-icon {
                               width: 50px;
                               height: 50px;
-                              border-radius: 50%;
                               background: var(--light);
+                              border-radius: 10px;
                               display: flex;
                               align-items: center;
                               justify-content: center;
-                              text-decoration: none;
-                              color: var(--dark);
-                              font-weight: 600;
-                              transition: all 0.3s;
+                              font-size: 1.25rem;
+                              flex-shrink: 0;
                 }
 
-                .social-link:hover {
+                .contact-item h4 {
+                              font-family: 'Inter', sans-serif;
+                              font-weight: 600;
+                              color: var(--dark);
+                              margin-bottom: 0.25rem;
+                }
+
+                .contact-item p {
+                              color: var(--gray);
+                              font-size: 0.95rem;
+                }
+
+                .contact-form {
+                              background: var(--light);
+                              padding: 2.5rem;
+                              border-radius: 20px;
+                }
+
+                .form-group {
+                              margin-bottom: 1.5rem;
+                }
+
+                .form-group label {
+                              display: block;
+                              margin-bottom: 0.5rem;
+                              font-weight: 500;
+                              color: var(--dark);
+                }
+
+                .form-group input,
+                .form-group textarea,
+                .form-group select {
+                              width: 100%;
+                              padding: 1rem;
+                              border: 1px solid #e2e8f0;
+                              border-radius: 8px;
+                              font-family: 'Inter', sans-serif;
+                              font-size: 1rem;
+                              transition: border-color 0.3s;
+                }
+
+                .form-group input:focus,
+                .form-group textarea:focus,
+                .form-group select:focus {
+                              outline: none;
+                              border-color: var(--primary);
+                }
+
+                .form-group textarea {
+                              resize: vertical;
+                              min-height: 120px;
+                }
+
+                .form-row {
+                              display: grid;
+                              grid-template-columns: 1fr 1fr;
+                              gap: 1rem;
+                }
+
+                /* Hours */
+                .office-hours {
                               background: var(--primary);
                               color: var(--white);
+                              padding: 3rem 2rem;
+                              margin-top: 4rem;
+                              border-radius: 20px;
+                }
+
+                .hours-container {
+                              max-width: 1200px;
+                              margin: 0 auto;
+                              display: flex;
+                              justify-content: space-between;
+                              align-items: center;
+                              flex-wrap: wrap;
+                              gap: 2rem;
+                }
+
+                .hours-title {
+                              font-size: 1.5rem;
+                              font-family: 'Playfair Display', serif;
+                }
+
+                .hours-grid {
+                              display: flex;
+                              gap: 3rem;
+                }
+
+                .hours-item {
+                              text-align: center;
+                }
+
+                .hours-item .day {
+                              font-weight: 600;
+                              margin-bottom: 0.25rem;
+                }
+
+                .hours-item .time {
+                              opacity: 0.9;
+                              font-size: 0.95rem;
                 }
 
                 /* Footer */
                 footer {
                               background: var(--dark);
                               color: var(--white);
-                              text-align: center;
-                              padding: 2rem;
+                              padding: 4rem 2rem 2rem;
                 }
 
-                footer p {
-                              opacity: 0.8;
+                .footer-container {
+                              max-width: 1200px;
+                              margin: 0 auto;
+                }
+
+                .footer-content {
+                              display: grid;
+                              grid-template-columns: 2fr 1fr 1fr 1fr;
+                              gap: 3rem;
+                              margin-bottom: 3rem;
+                }
+
+                .footer-brand .logo {
+                              color: var(--white);
+                              margin-bottom: 1rem;
+                              display: inline-block;
+                }
+
+                .footer-brand p {
+                              color: #94a3b8;
+                              font-size: 0.95rem;
+                              margin-bottom: 1.5rem;
+                }
+
+                .footer-heading {
+                              font-family: 'Inter', sans-serif;
+                              font-weight: 600;
+                              margin-bottom: 1.5rem;
+                              font-size: 1rem;
+                }
+
+                .footer-links {
+                              list-style: none;
+                }
+
+                .footer-links li {
+                              margin-bottom: 0.75rem;
+                }
+
+                .footer-links a {
+                              color: #94a3b8;
+                              text-decoration: none;
+                              font-size: 0.95rem;
+                              transition: color 0.3s;
+                }
+
+                .footer-links a:hover {
+                              color: var(--white);
+                }
+
+                .footer-bottom {
+                              border-top: 1px solid #334155;
+                              padding-top: 2rem;
+                              text-align: center;
+                              color: #94a3b8;
+                              font-size: 0.9rem;
                 }
 
                 /* Responsive */
-                @media (max-width: 768px) {
+                @media (max-width: 968px) {
                               .hero-container,
-                              .about-content {
+                              .about-content,
+                              .contact-grid {
                                                 grid-template-columns: 1fr;
                                                 text-align: center;
                               }
@@ -341,10 +659,24 @@
                                                 font-size: 2.5rem;
                               }
 
-                              .profile-placeholder {
-                                                width: 250px;
-                                                height: 250px;
-                                                font-size: 5rem;
+                              .hero-content p {
+                                                margin: 0 auto 2rem;
+                              }
+
+                              .hero-badges {
+                                                justify-content: center;
+                              }
+
+                              .doctor-image {
+                                                width: 300px;
+                                                height: 360px;
+                                                font-size: 4rem;
+                              }
+
+                              .experience-badge {
+                                                bottom: -15px;
+                                                left: 50%;
+                                                transform: translateX(-50%);
                               }
 
                               .nav-links {
@@ -354,7 +686,29 @@
                               .btn-outline {
                                                 margin-left: 0;
                                                 margin-top: 1rem;
-                                                display: block;
+                              }
+
+                              .credentials {
+                                                grid-template-columns: 1fr;
+                              }
+
+                              .footer-content {
+                                                grid-template-columns: 1fr 1fr;
+                              }
+
+                              .hours-grid {
+                                                flex-wrap: wrap;
+                                                gap: 1.5rem;
+                              }
+                }
+
+                @media (max-width: 480px) {
+                              .footer-content {
+                                                grid-template-columns: 1fr;
+                              }
+
+                              .form-row {
+                                                grid-template-columns: 1fr;
                               }
                 }
             </style>
@@ -362,95 +716,184 @@
   <body>
         <nav>
                   <div class="nav-container">
-                                <a href="#" class="logo">MK</a>a>
-                                <ul class="nav-links">
-                                                  <li><a href="#about">About</a>a></li>
-                                                <li><a href="#projects">Projects</a>a></li>
-                                                <li><a href="#contact">Contact</a>a></li>
-                                </ul>ul>
+                                <a href="#" class="logo">Dr. Kharat<span>.</span></a>a>
+                              <ul class="nav-links">
+                                              <li><a href="#services">Services</a>a></li>
+                                              <li><a href="#about">About</a>a></li>
+                                              <li><a href="#conditions">Conditions</a>a></li>
+                                              <li><a href="#contact">Contact</a>a></li>
+                                              <li><a href="#contact" class="nav-cta">Book Appointment</a>a></li>
+                              </ul>ul>
                   </div>div>
         </nav>
   
       <section class="hero">
               <div class="hero-container">
                           <div class="hero-content">
-                                          <h1>Hi, I'm <span>Minal Kharat</span></h1>
-                                          <p>A passionate developer building innovative solutions. Welcome to my professional portfolio.</p>
-                                          <a href="#projects" class="btn">View My Work</a>a>
-                                          <a href="#contact" class="btn btn-outline">Get In Touch</a>a>
+                                          <h1>Dr. Minal Kharat</h1>
+                                          <p class="subtitle">Board-Certified Neurologist</p>p>
+                                          <p>Providing compassionate, comprehensive neurological care with a patient-centered approach. Specialized in diagnosing and treating disorders of the brain, spine, and nervous system.</p>
+                                          <div class="hero-badges">
+                                                              <span class="badge"><span class="badge-icon">✓</span> Board Certified</span>
+                                                              <span class="badge"><span class="badge-icon">✓</span> Accepting New Patients</span>
+                                                              <span class="badge"><span class="badge-icon">✓</span> Telehealth Available</span>
+                                          </div>div>
+                                          <a href="#contact" class="btn">Schedule Consultation</a>a>
+                                          <a href="tel:+1234567890" class="btn btn-outline">Call: (123) 456-7890</a>a>
                           </div>div>
                           <div class="hero-image">
-                                          <div class="profile-placeholder">MK</div>div>
+                                          <div class="doctor-image">🧠</div>div>
+                                          <div class="experience-badge">
+                                                              <div class="number">15+</div>div>
+                                                              <div class="text">Years Experience</div>div>
+                                          </div>div>
+                          </div>div>
+              </div>div>
+      </section>section>
+  
+      <section id="services">
+              <div class="section-container">
+                          <div class="section-header">
+                                          <p class="section-label">What I Offer</p>
+                                          <h2 class="section-title">Neurological Services</h2>
+                                          <p class="section-subtitle">Comprehensive diagnostic and treatment services for a wide range of neurological conditions</p>
+                          </div>div>
+                          <div class="services-grid">
+                                          <div class="service-card">
+                                                              <div class="service-icon">🔬</div>div>
+                                                              <h3>Diagnostic Evaluation</h3>
+                                                              <p>Comprehensive neurological examinations, EEG, EMG/NCS, and advanced imaging interpretation to accurately diagnose your condition.</p>
+                                          </div>div>
+                                          <div class="service-card">
+                                                              <div class="service-icon">💊</div>div>
+                                                              <h3>Treatment Management</h3>
+                                                              <p>Personalized treatment plans including medication management, interventional procedures, and coordinated care with specialists.</p>
+                                          </div>div>
+                                          <div class="service-card">
+                                                              <div class="service-icon">🧠</div>div>
+                                                              <h3>Cognitive Assessment</h3>
+                                                              <p>Memory evaluations, dementia screening, and cognitive rehabilitation programs for optimal brain health.</p>
+                                          </div>div>
+                                          <div class="service-card">
+                                                              <div class="service-icon">⚡</div>div>
+                                                              <h3>Headache & Migraine Care</h3>
+                                                              <p>Specialized treatment for chronic headaches, migraines, and cluster headaches using the latest therapeutic approaches.</p>
+                                          </div>div>
+                                          <div class="service-card">
+                                                              <div class="service-icon">🔄</div>div>
+                                                              <h3>Movement Disorders</h3>
+                                                              <p>Expert care for Parkinson's disease, essential tremor, dystonia, and other movement-related conditions.</p>
+                                          </div>div>
+                                          <div class="service-card">
+                                                              <div class="service-icon">💻</div>div>
+                                                              <h3>Telehealth Consultations</h3>
+                                                              <p>Convenient virtual appointments for follow-ups, medication reviews, and consultations from the comfort of your home.</p>
+                                          </div>div>
                           </div>div>
               </div>div>
       </section>section>
   
       <section id="about">
               <div class="section-container">
-                          <h2 class="section-title">About Me</h2>
-                          <p class="section-subtitle">Get to know me better</p>
                           <div class="about-content">
-                                          <div class="about-text">
-                                                              <p>I'm a software developer with a passion for creating elegant solutions to complex problems. I enjoy working on projects that challenge me and allow me to grow as a professional.</p>
-                                                              <p>With experience in various technologies and frameworks, I bring a versatile skill set to every project I work on.</p>
-                                                              <div class="skills">
-                                                                                      <span class="skill-tag">Python</span>
-                                                                                      <span class="skill-tag">JavaScript</span>
-                                                                                      <span class="skill-tag">React</span>
-                                                                                      <span class="skill-tag">Node.js</span>
-                                                                                      <span class="skill-tag">Machine Learning</span>
-                                                                                      <span class="skill-tag">AI/ML</span>
-                                                                                      <span class="skill-tag">Blockchain</span>
-                                                                                      <span class="skill-tag">Web3</span>
-                                                              </div>div>
+                                          <div class="about-image">
+                                                              <div class="about-img-placeholder">👩‍⚕️</div>div>
                                           </div>div>
-                                          <div class="about-stats">
-                                                              <!-- Add your stats or additional content here -->
+                                          <div class="about-text">
+                                                              <p class="section-label">About Dr. Kharat</p>
+                                                              <h2>Dedicated to Your Neurological Health</h2>
+                                                              <p>With over 15 years of experience in neurology, I am committed to providing the highest quality care for patients with neurological conditions. My approach combines the latest medical advances with compassionate, personalized attention.</p>
+                                                              <p>I believe in taking the time to listen to my patients, thoroughly explain diagnoses, and develop treatment plans that fit each individual's lifestyle and goals.</p>
+                                                              <div class="credentials">
+                                                                                      <div class="credential">
+                                                                                                                  <div class="credential-icon">🎓</div>div>
+                                                                                                                  <div class="credential-text">
+                                                                                                                                                  <strong>Medical Degree</strong>
+                                                                                                                                                  <span>Top Medical School</span>
+                                                                                                                    </div>div>
+                                                                                        </div>div>
+                                                                                      <div class="credential">
+                                                                                                                  <div class="credential-icon">🏥</div>div>
+                                                                                                                  <div class="credential-text">
+                                                                                                                                                  <strong>Residency</strong>
+                                                                                                                                                  <span>Neurology Training</span>
+                                                                                                                    </div>div>
+                                                                                        </div>div>
+                                                                                      <div class="credential">
+                                                                                                                  <div class="credential-icon">📜</div>div>
+                                                                                                                  <div class="credential-text">
+                                                                                                                                                  <strong>Board Certified</strong>
+                                                                                                                                                  <span>American Board of Neurology</span>
+                                                                                                                    </div>div>
+                                                                                        </div>div>
+                                                                                      <div class="credential">
+                                                                                                                  <div class="credential-icon">🏆</div>div>
+                                                                                                                  <div class="credential-text">
+                                                                                                                                                  <strong>Fellowship</strong>
+                                                                                                                                                  <span>Subspecialty Training</span>
+                                                                                                                    </div>div>
+                                                                                        </div>div>
+                                                              </div>div>
                                           </div>div>
                           </div>div>
               </div>div>
       </section>section>
   
-      <section id="projects">
+      <section id="conditions">
               <div class="section-container">
-                          <h2 class="section-title">Featured Projects</h2>
-                          <p class="section-subtitle">Some of my recent work</p>
-                          <div class="projects-grid">
-                                          <div class="project-card">
-                                                              <div class="project-image">🏠</div>div>
-                                                              <div class="project-content">
-                                                                                      <h3>HomeQuest</h3>
-                                                                                      <p>A comprehensive home search and real estate platform with advanced filtering capabilities.</p>
-                                                                                      <div class="project-tags">
-                                                                                                                  <span class="project-tag">React</span>
-                                                                                                                  <span class="project-tag">Node.js</span>
-                                                                                                                  <span class="project-tag">MongoDB</span>
-                                                                                        </div>div>
-                                                              </div>div>
+                          <div class="section-header">
+                                          <p class="section-label">Areas of Expertise</p>
+                                          <h2 class="section-title">Conditions Treated</h2>
+                                          <p class="section-subtitle">Specialized care for a comprehensive range of neurological conditions</p>
+                          </div>div>
+                          <div class="conditions-grid">
+                                          <div class="condition-item">
+                                                              <span>🤕</span>
+                                                              <h4>Headaches & Migraines</h4>
                                           </div>div>
-                                          <div class="project-card">
-                                                              <div class="project-image">🔬</div>div>
-                                                              <div class="project-content">
-                                                                                      <h3>Clinical Trial Simulator</h3>
-                                                                                      <p>Multi-agent AI system for simulating and analyzing clinical trial outcomes.</p>
-                                                                                      <div class="project-tags">
-                                                                                                                  <span class="project-tag">Python</span>
-                                                                                                                  <span class="project-tag">AI/ML</span>
-                                                                                                                  <span class="project-tag">Multi-Agent</span>
-                                                                                        </div>div>
-                                                              </div>div>
+                                          <div class="condition-item">
+                                                              <span>⚡</span>
+                                                              <h4>Epilepsy & Seizures</h4>
                                           </div>div>
-                                          <div class="project-card">
-                                                              <div class="project-image">🔐</div>div>
-                                                              <div class="project-content">
-                                                                                      <h3>ZK Age Verification</h3>
-                                                                                      <p>Zero-knowledge proof system for privacy-preserving age verification on blockchain.</p>
-                                                                                      <div class="project-tags">
-                                                                                                                  <span class="project-tag">Blockchain</span>
-                                                                                                                  <span class="project-tag">ZK Proofs</span>
-                                                                                                                  <span class="project-tag">Web3</span>
-                                                                                        </div>div>
-                                                              </div>div>
+                                          <div class="condition-item">
+                                                              <span>🧠</span>
+                                                              <h4>Stroke</h4>
+                                          </div>div>
+                                          <div class="condition-item">
+                                                              <span>🔄</span>
+                                                              <h4>Parkinson's Disease</h4>
+                                          </div>div>
+                                          <div class="condition-item">
+                                                              <span>💭</span>
+                                                              <h4>Alzheimer's & Dementia</h4>
+                                          </div>div>
+                                          <div class="condition-item">
+                                                              <span>💪</span>
+                                                              <h4>Multiple Sclerosis</h4>
+                                          </div>div>
+                                          <div class="condition-item">
+                                                              <span>🔌</span>
+                                                              <h4>Neuropathy</h4>
+                                          </div>div>
+                                          <div class="condition-item">
+                                                              <span>😴</span>
+                                                              <h4>Sleep Disorders</h4>
+                                          </div>div>
+                                          <div class="condition-item">
+                                                              <span>🦴</span>
+                                                              <h4>Back & Neck Pain</h4>
+                                          </div>div>
+                                          <div class="condition-item">
+                                                              <span>🤝</span>
+                                                              <h4>Tremors</h4>
+                                          </div>div>
+                                          <div class="condition-item">
+                                                              <span>😵</span>
+                                                              <h4>Vertigo & Dizziness</h4>
+                                          </div>div>
+                                          <div class="condition-item">
+                                                              <span>🧬</span>
+                                                              <h4>Neuromuscular Disorders</h4>
                                           </div>div>
                           </div>div>
               </div>div>
@@ -458,26 +901,143 @@
   
       <section id="contact">
               <div class="section-container">
-                          <h2 class="section-title">Get In Touch</h2>
-                          <p class="section-subtitle">Let's work together</p>
-                          <div class="contact-content">
-                                          <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
-                                          <a href="mailto:your.email@example.com" class="btn">Send Me an Email</a>a>
-                                          <div class="social-links">
-                                                              <a href="https://github.com/minalkharat-cmd" class="social-link" target="_blank">GH</a>a>
-                                                              <a href="https://linkedin.com" class="social-link" target="_blank">IN</a>a>
-                                                              <a href="https://twitter.com" class="social-link" target="_blank">TW</a>a>
-                                          </div>div>
-                          </div>div>
-              </div>div>
+                          <div class="contact-grid">
+                                          <div class="contact-info">
+                                                              <p class="section-label">Get In Touch</p>
+                                                              <h2>Schedule Your Appointment</h2>
+                                                              <p>Ready to take the first step toward better neurological health? Contact us to schedule a consultation or ask any questions about our services.</p>
+                                                              <div class="contact-details">
+                                                                                      <div class="contact-item">
+                                                                                                                  <div class="contact-icon">📍</div>div>
+                                                                                                                  <div>
+                                                                                                                                                    <h4>Office Location</h4>
+                                                                                                                                                    <p>123 Medical Center Drive, Suite 456<br>City, State 12345</p>p>
+                                                                                                                    </div>
+                                                                                        </div>
+                                                                                        <div class="contact-item">
+                                                                                                                      <div class="contact-icon">📞</div>
+                                                                                                                      <div>
+                                                                                                                                                        <h4>Phone</h4>
+                                                                                                                                                      <p>(123) 456-7890</p>
+                                                                                                                        </div>
+                                                                                          </div>
+                                                                                      <div class="contact-item">
+                                                                                                                  <div class="contact-icon">✉️</div>
+                                                                                                                  <div>
+                                                                                                                                                  <h4>Email</h4>
+                                                                                                                                                  <p>contact@drkharat.com</p>
+                                                                                                                    </div>
+                                                                                        </div>
+                                                                                      <div class="contact-item">
+                                                                                                                  <div class="contact-icon">🕐</div>
+                                                                                                                  <div>
+                                                                                                                                                  <h4>Office Hours</h4>
+                                                                                                                                                  <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                                                                                                                    </div>
+                                                                                        </div>
+                                                              </div>
+                                          </div>
+                                          <div class="contact-form">
+                                                              <form>
+                                                                                        <div class="form-row">
+                                                                                                                      <div class="form-group">
+                                                                                                                                                        <label for="name">Full Name</label>label>
+                                                                                                                                                        <input type="text" id="name" placeholder="Your name">
+                                                                                                                        </div>
+                                                                                                                      <div class="form-group">
+                                                                                                                                                        <label for="phone">Phone Number</label>label>
+                                                                                                                                                        <input type="tel" id="phone" placeholder="(123) 456-7890">
+                                                                                                                        </div>
+                                                                                          </div>
+                                                                                        <div class="form-group">
+                                                                                                                      <label for="email">Email Address</label>label>
+                                                                                                                      <input type="email" id="email" placeholder="your@email.com">
+                                                                                          </div>
+                                                                                        <div class="form-group">
+                                                                                                                      <label for="reason">Reason for Visit</label>label>
+                                                                                                                      <select id="reason">
+                                                                                                                                                        <option value="">Select a reason</option>option>
+                                                                                                                                                        <option value="new">New Patient Consultation</option>option>
+                                                                                                                                                        <option value="followup">Follow-up Visit</option>option>
+                                                                                                                                                        <option value="second">Second Opinion</option>option>
+                                                                                                                                                        <option value="other">Other</option>option>
+                                                                                                                        </select>select>
+                                                                                          </div>
+                                                                                        <div class="form-group">
+                                                                                                                      <label for="message">Additional Information</label>label>
+                                                                                                                      <textarea id="message" placeholder="Tell us about your concerns or symptoms..."></textarea>
+                                                                                          </div>
+                                                                                        <button type="submit" class="btn" style="width: 100%;">Request Appointment</button>button>
+                                                              </form>
+                                          </div>
+                          </div>
+                            <div class="office-hours">
+                                              <div class="hours-container">
+                                                                    <h3 class="hours-title">Office Hours</h3>
+                                                                    <div class="hours-grid">
+                                                                                              <div class="hours-item">
+                                                                                                                            <div class="day">Monday - Thursday</div>
+                                                                                                                            <div class="time">9:00 AM - 5:00 PM</div>
+                                                                                                </div>
+                                                                                              <div class="hours-item">
+                                                                                                                            <div class="day">Friday</div>
+                                                                                                                            <div class="time">9:00 AM - 3:00 PM</div>
+                                                                                                </div>
+                                                                                              <div class="hours-item">
+                                                                                                                            <div class="day">Saturday - Sunday</div>
+                                                                                                                            <div class="time">Closed</div>
+                                                                                                </div>
+                                                                    </div>
+                                              </div>
+                            </div>
+              </div>
       </section>section>
-  
-      <footer>
-                <p>&copy; 2026 Minal Kharat. All rights reserved.</p>p>
-      </footer>
+
+        <footer>
+                  <div class="footer-container">
+                                <div class="footer-content">
+                                                  <div class="footer-brand">
+                                                                        <a href="#" class="logo">Dr. Kharat<span>.</span></a>a>
+                                                                        <p>Providing exceptional neurological care with compassion and expertise. Your brain health is our priority.</p>
+                                                  </div>
+                                                <div>
+                                                                    <h4 class="footer-heading">Quick Links</h4>
+                                                                    <ul class="footer-links">
+                                                                                            <li><a href="#services">Services</a>a></li>
+                                                                                            <li><a href="#about">About</a>a></li>
+                                                                                            <li><a href="#conditions">Conditions</a>a></li>
+                                                                                            <li><a href="#contact">Contact</a>a></li>
+                                                                    </ul>ul>
+                                                </div>
+                                                <div>
+                                                                    <h4 class="footer-heading">Services</h4>
+                                                                    <ul class="footer-links">
+                                                                                            <li><a href="#">Diagnostic Testing</a>a></li>
+                                                                                            <li><a href="#">Treatment Plans</a>a></li>
+                                                                                            <li><a href="#">Telehealth</a>a></li>
+                                                                                            <li><a href="#">Second Opinions</a>a></li>
+                                                                    </ul>ul>
+                                                </div>
+                                                <div>
+                                                                    <h4 class="footer-heading">Contact</h4>
+                                                                    <ul class="footer-links">
+                                                                                            <li><a href="tel:+1234567890">(123) 456-7890</a>a></li>
+                                                                                            <li><a href="mailto:contact@drkharat.com">contact@drkharat.com</a>a></li>
+                                                                                            <li><a href="#">Patient Portal</a>a></li>
+                                                                    </ul>ul>
+                                                </div>
+                                </div>
+                              <div class="footer-bottom">
+                                              <p>&copy; 2026 Dr. Minal Kharat, MD. All rights reserved. | <a href="#" style="color: #94a3b8;">Privacy Policy</a>a></p>
+                              </div>
+                  </div>
+        </footer>
   </body>
-</html>html>
-      </footer></p></p></span></h1></li></li>
+</html>html></p></li></li></p>
+        </footer>
+                                                              </form></p></p></h4>
+                                                                                                                      </div>
+                                                                                                                  </div></p></strong></strong></p></p></h1></li></li></span>
         </nav>
   </body>
       </style></title>
